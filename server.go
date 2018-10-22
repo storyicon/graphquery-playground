@@ -17,6 +17,8 @@ package main
 import (
 	"io/ioutil"
 	"net/http"
+	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -49,10 +51,17 @@ func HTTPRequest(url string) (string, error) {
 	return string(body), err
 }
 
+// Get the absolute path of the index.html file.
+// * In order to fix the file path error caused by cross compilation
+func getIndexPath() string {
+	dir, _ := filepath.Abs(filepath.Dir(os.Args[0]))
+	return filepath.Join(dir, "index.html")
+}
+
 // Start is used to start the http server
 func Start() {
 	router := gin.Default()
-	router.LoadHTMLFiles("./index.html")
+	router.LoadHTMLFiles(getIndexPath())
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", gin.H{
 			"title":    "GraphQuery PlayGround",
