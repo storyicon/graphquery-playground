@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style title="Normalize.css">
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+
+        hr {
+            box-sizing: content-box;
+            height: 0;
+            overflow: visible;
+        }
+
+        pre {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+
+        a {
+            background-color: transparent;
+        }
+
+        abbr[title] {
+            border-bottom: none;
+            text-decoration: underline;
+            text-decoration: underline dotted;
+        }
+
+        b,
+        strong {
+            font-weight: bolder;
+        }
+
+        code,
+        kbd,
+        samp {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+
+        small {
+            font-size: 80%;
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sub {
+            bottom: -0.25em;
+        }
+
+        sup {
+            top: -0.5em;
+        }
+
+        img {
+            border-style: none;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        input {
+            overflow: visible;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focusring,
+        [type="button"]:-moz-focusring,
+        [type="reset"]:-moz-focusring,
+        [type="submit"]:-moz-focusring {
+            outline: 1px dotted ButtonText;
+        }
+
+        fieldset {
+            padding: 0.35em 0.75em 0.625em;
+        }
+
+        legend {
+            box-sizing: border-box;
+            color: inherit;
+            display: table;
+            max-width: 100%;
+            padding: 0;
+            white-space: normal;
+        }
+
+        progress {
+            vertical-align: baseline;
+        }
+
+        textarea {
+            overflow: auto;
+        }
+
+        [type="checkbox"],
+        [type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        [type="number"]::-webkit-inner-spin-button,
+        [type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+
+        [type="search"] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+        }
+
+        [type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+        }
+
+        details {
+            display: block;
+        }
+
+        summary {
+            display: list-item;
+        }
+
+        template {
+            display: none;
+        }
+
+        [hidden] {
+            display: none;
+        }
+    </style>
+    <style>
+        h1{
+            font-size: 22px;
+        }
+        input,
+        textarea {
+            border: 0;
+            outline: none;
+            resize: none;
+        }
+
+        textarea {
+            width: 100%;
+            border: none;
+            height: 100%;
+            display: block;
+        }
+
+        footer {
+            height: 20px;
+            border: 4px solid #ececec;
+            margin-top: -5px;
+            min-height: 25px;
+            line-height: 24px;
+            font-size: 15px;
+            text-indent: 4px;
+        }
+
+        header {
+            height: 50px;
+            overflow: hidden;
+            text-indent: 22px;
+            min-height: 56px;
+        }
+
+        #container {
+            display: table;
+            width: 100%;
+        }
+
+        .item {
+            display: table-cell;
+            border: 4px solid #e2e2e2aa;
+            height: 100%;
+            overflow: hidden;
+            width: 33.33%;
+        }
+
+        .btn {
+            color: #fff;
+            width: 90px;
+            height: 37px;
+            background: #647eff;
+            padding: 0;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .navigate {
+            position: relative;
+            height: 37px;
+            display: block;
+            float: left;
+            width: 100%;
+            border-bottom: 4px solid #e2e2e2aa;
+        }
+
+        .content{
+            height: 100%;
+        }
+
+        #download_url{
+            height: 35px;
+            width: 100%;
+            text-indent: 8px;
+        }
+
+        #download_btn, #analyzer_btn{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .head{
+            float: left;
+            height: 100%;
+            font-size: 25px;
+            line-height: 55px;
+        }
+        .control{
+            float: left;
+            padding: 15px 10px 10px;
+        }
+        #examples{
+            width: 200px;
+            height: 27px;
+        }
+        #load_examples{
+            height: 26px;
+            width: 50px; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head">{{.title}}</div>
+        <div class="control">
+            <select name="examples" id="examples">
+                <option value="-1">--examples--</option>
+            </select>
+            <button id="load_examples" class="btn">Load</button>
+        </div>
+    </header>
+    <div id="container">
+        <div class="item resource_wrap">
+            <div class="navigate">
+                <input type="text" id="download_url" placeholder="url address">
+                <button id="download_btn" class="btn">Download</button>
+            </div>
+            <div class="content">
+                <textarea name="resource" class="pool" id="resource"></textarea>
+            </div>
+        </div>
+        <div class="item analyzer_wrap">
+            <div class="navigate">
+                <button id="analyzer_btn" class="btn">Analyzer</button>
+            </div>
+            <div class="content">
+                <textarea name="analyzer" class="pool" id="analyzer"></textarea>
+            </div>
+        </div>
+        <div class="item conseq_wrap">
+            <div class="navigate"></div>
+            <div class="content">
+                <textarea name="conseq" class="pool" id="conseq"></textarea>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<script>
+    var examples = {{.examples}};
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    (function () {
+        var $container = $("#container"),
+            $footer = $("footer"),
+            $header = $("header"),
+            $item = $(".item"),
+            $resource = $("#resource"),
+            $analyzer = $("#analyzer"),
+            $conseq = $("#conseq"),
+            $analyzerBtn = $("#analyzer_btn"),
+            $downloadUrl = $("#download_url"),
+            $downloadBtn = $("#download_btn"),
+            $examples = $("#examples"),
+            $load_examples = $("#load_examples"),
+            dert = 20,
+            footerHeight = $footer.height(),
+            headerHeight = $header.height();
+
+        function resize() {
+            var height = $(window).height(),
+                itemHeight = height - footerHeight - headerHeight - dert;
+            $item.height(itemHeight);
+            for (var i = 0; i < $item.length; i++) {
+                var $this = $item.eq(i),
+                    $pool = $this.find(".pool"),
+                    $navigate = $this.find(".navigate"),
+                    navigateHeight = $navigate.height();
+                $pool.height(itemHeight - navigateHeight);
+            }
+        }
+
+        function setTimeCost(time) {
+            $footer.text("Time Cost:" + Math.floor(time / 1e6) + "ms");
+        }
+
+        function formatURL(url) {
+            if (url.indexOf("http") != 0) {
+                url = "http://" + url;
+            }
+            $downloadUrl.val(url);
+            return url;
+        }
+
+        function isObject(arg) {
+            return Object.prototype.toString.call(arg).toLowerCase() === '[object object]';
+        }
+
+        function isString(arg) {
+            return Object.prototype.toString.call(arg).toLowerCase() === '[object string]';
+        }
+
+        function formatData(data) {
+            try {
+                var raw = data;
+                if (isString(raw)) {
+                    raw = JSON.parse(raw);
+                }
+                return JSON.stringify(raw, null, 4)
+            } catch (e) {
+                return data;
+            }
+        }
+
+        function loadExamples() {
+            var options = "";
+            for (var i = 0; i < examples.length; i++) {
+                var example = examples[i];
+                options += '<option value="' + i + '">' + example.name + '</option>';
+            }
+            $examples.append(options);
+        }
+
+        function getResource() {
+            return $resource.val();
+        }
+
+        $load_examples.click(function (e) {
+            var index = parseInt($examples.val());
+            if (index < 0) {
+                return
+            }
+            var example = examples[index];
+            $resource.val(formatData(example.document));
+            $analyzer.val(formatData(example.expr));
+        });
+        $downloadBtn.click(function (e) {
+            var url = $downloadUrl.val();
+            $resource.val("")
+            $.ajax({
+                url: "/download?url=" + formatURL(url),
+                async: true,
+            }).done(function (response) {
+                if (!response) {
+                    return;
+                }
+                setTimeCost(response.TimeCost);
+                $resource.val(formatData(response.Data));
+            });
+        });
+        $downloadUrl.keydown(function (event) {
+            if (event.keyCode == 13) {
+                $downloadBtn.trigger("click");
+            }
+        });
+        $analyzerBtn.click(function (e) {
+            var resource = getResource(),
+                analyzer = $analyzer.val(),
+                data = {
+                    document: resource,
+                    expr: analyzer,
+                };
+            $resource.val(resource);
+            $conseq.val("")
+            $.ajax({
+                type: 'POST',
+                data: data,
+                url: "/analyze",
+                async: true,
+            }).done(function (response) {
+                if (!response) {
+                    return;
+                }
+                setTimeCost(response.TimeCost);
+                $conseq.val(formatData(response.Data));
+                if (response.Error) {
+                    alert(response.Error)
+                } 
+            });
+        });
+        $(window).resize(resize).resize();
+        loadExamples();
+    })();
+</script>
+
+</html>
