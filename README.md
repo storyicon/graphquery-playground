@@ -19,6 +19,7 @@
 ---
 
 # GraphQuery-PlayGround
+![GraphQuery](https://raw.githubusercontent.com/storyicon/graphquery/master/docs/screenshot/graphquery.png)   
 
 [GraphQuery](https://github.com/storyicon/graphquery) is a query language and execution engine tied to any backend service.GraphQuery-PlayGround is a web application for practicing, learning and testing GraphQuery.
 
@@ -30,7 +31,7 @@ GraphQuery-PlayGround is programming language independent, we provide a binary d
 
 Go to the [Release]() page, download and unzip the corresponding binary package according to your system type, run the server, and access `127.0.0.1:8558` in the browser.
 
-![graphquery-playground]()
+![graphquery-playground](https://raw.githubusercontent.com/storyicon/graphquery-playground/master/docs/screenshot/playground.gif)
 
 
 ### 2. Compile
@@ -46,4 +47,4 @@ Find the downloaded `storyicon/graphquery-playground` in GOPATH,
 ```
 go build server.go
 ```
-Execute the obtained binary package `server`, access `127.0.0.1:8558`
+Execute the obtained binary package `server`, access `127.0.0.1:8558` in the browser.
