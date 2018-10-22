@@ -29,14 +29,14 @@ GraphQuery-PlayGround is programming language independent, we provide a binary d
 
 ### 1. Use binary distribution
 
-Go to the [Release]() page, download and unzip the corresponding binary package according to your system type, run the server, and access `127.0.0.1:8558` in the browser.
+Go to the [Release](https://github.com/storyicon/graphquery-playground/releases) page, download and unzip the corresponding binary package according to your system type, run the server, and access `127.0.0.1:8558` in the browser.
 
 ![graphquery-playground](https://raw.githubusercontent.com/storyicon/graphquery-playground/master/docs/screenshot/playground.gif)
 
 
 ### 2. Compile
 
-If you don't want to use the [Release version]() and want to modify the source code, you can read the following steps to compile.
+If you don't want to use the [Release version](https://github.com/storyicon/graphquery-playground/releases) and want to modify the source code, you can read the following steps to compile.
 
 ```
 go get github.com/storyicon/graphquery-playground
