@@ -245,7 +245,7 @@ func GetExamples() interface{} {
 </html>`,
 			Expr: strings.Join([]string{
 				"{",
-				"    __json__ `regex(\"/var data = ([\\s\\S]*?)\\s+</script>/w\")`",
+				"    __json__ `regex(\"var data = ([\\s\\S]*?)\\s+</script>\")`",
 				"    __firstname__ `link(\"__json__\");json(\"name.first\")`",
 				"    __lastname__ `link(\"__json__\");json(\"name.last\")`",
 				"    author `template(\"{$__firstname__} {$__lastname__}\")`",
@@ -254,7 +254,7 @@ func GetExamples() interface{} {
 				"    character `xpath(\"//character\")` [{",
 				"        born `css(\"born\")`",
 				"        name  `xpath(\"name\")`",
-				"        qualification `regex(\"/qualification>(.*?)</w\")`",
+				"        qualification `regex(\"qualification>(.*?)<\")`",
 				"    }]",
 				"    friends `link(\"__json__\");json(\"friends\")` [{",
 				"        first `json(\"first\")`",
