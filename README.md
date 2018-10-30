@@ -39,7 +39,7 @@ Go to the [Release](https://github.com/storyicon/graphquery-playground/releases)
 If you don't want to use the [Release version](https://github.com/storyicon/graphquery-playground/releases) and want to modify the source code, you can read the following steps to compile.
 
 ```
-go get github.com/storyicon/graphquery-playground
+go get -u github.com/storyicon/graphquery-playground
 ```
 
 Find the downloaded `storyicon/graphquery-playground` in GOPATH, 
